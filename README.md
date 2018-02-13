@@ -1,2 +1,3 @@
 # RCS
-learning project (first lesson)
+learning projects
+
