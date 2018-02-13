@@ -1,3 +1,2 @@
 # RCS
-learning projects
-
+first code written during learning
