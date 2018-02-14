@@ -20,6 +20,7 @@ namespace HelloWorld
         static void SayHelloToUser()
         {
             //palūdzam lietotājam ierakstīt vārdu
+
             Console.WriteLine("Please enter your name:");
             //izveidojam mainīgo, kur glabāt lietotāja vērtību
             string usersName;
@@ -36,7 +37,7 @@ namespace HelloWorld
         }
 
         static void SayHelloAge()
-        {
+        {// {nosaka scope, kurā arī darbojas mainīgais
             Console.WriteLine("Your age?");
             string usersAge;
             usersAge = Console.ReadLine();
