@@ -10,44 +10,39 @@ namespace NumbersGuesingGame
     {
         static void Main(string[] args)
         {
-            
+
             Console.WriteLine("Lūdzu ievadi maksimālo skaitli: ");
             int maxNumber = int.Parse(Console.ReadLine());
 
             Random randomNumberMaker = new Random();// ierakstam mainīgajā jaunizveidotu ģeneratoru
-            int guesableNumber = randomNumberMaker.Next(1, maxNumber);//Next - atgriež gadījuma skaitli noteiktajās robežās
+            int guesableNumber = randomNumberMaker.Next(1, maxNumber + 1);//Next - atgriež gadījuma skaitli noteiktajās robežās
 
             Console.WriteLine("Skaitlis: " + guesableNumber);
-            Console.WriteLine
-           
 
-            while (true)            {
-                { 
+
+
+            while (true)
+            {
                 Console.WriteLine("Ievadiet minējumu: ");
-                int minējums = int.Parse(Console.ReadLine()); ;
+                int minējums = int.Parse(Console.ReadLine());
                 if (minējums > guesableNumber)
                 {
-                    Console.WriteLine("Minējums pārāk liels")
+                    Console.WriteLine("Minējums pārāk liels");
+
                 }
-                else if (usersInput == "b")
+                else if (minējums < guesableNumber)
                 {
-                    CountTwoNumbersTogether();
+                    Console.WriteLine("Minējums pārāk mazs");
+
                 }
-                else if (usersInput == "c")
+
+                else if (minējums == guesableNumber)
                 {
-                    DoesTheNumberDivide();
-                }
-                else if (usersInput == "x")
-                {
+                    Console.WriteLine("Pareizi");
                     break;
                 }
-                else
-                {
-                    Console.WriteLine("Sorry, did not understand");
-                }
-            }
 
-            Console.ReadLine();
+            }
 
             Console.ReadLine();
 
@@ -60,4 +55,4 @@ namespace NumbersGuesingGame
  //salīdzināt, vai lietotājs ir uzminējis
  //ja ir, tad izbeigt spēli
  //ja nav uzminējis, tad pateikt lietotājam
-//vai viņa minējums ir lielāks vai mazāks par minamo skaitli
+ //vai viņa minējums ir lielāks vai mazāks par minamo skaitli
