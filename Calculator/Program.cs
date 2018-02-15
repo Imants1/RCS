@@ -78,7 +78,7 @@ namespace Calculator
             Console.WriteLine(msg);
             //nolasām lietotāja ievadi no ekrāna un ierakstām teksta mainīgo
             string textInput = Console.ReadLine();
-            //izveidojam mainīgo, kur glabāt  skaitli
+            //izveidojam mainīgo, kur glabāt  skaitliC:\Users\Ilzīte\Documents\GitHub\RCS\Calculator\Program.cs
             double parsedNumber;
             //pārveidojam tekstu par skaitli un ierakstam mainīgajā
             bool parseWasSuccses = double.TryParse(textInput, out parsedNumber);//bool - true or false
