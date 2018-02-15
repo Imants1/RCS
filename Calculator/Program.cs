@@ -10,12 +10,44 @@ namespace Calculator
     {
         static void Main(string[] args)//Ctrl+KD - sakārto kodu
         {
-            CalculateCircleArea();
-            CountTwoNumbersTogether();
+            string usersInput = "0";
+            while (true)// veido ciklu, kas izpild bloku kamēr tas ir patiess, atšķirībā no if, kas to dara vienu reizi
+            {
+                Console.WriteLine("Lūdzu izvēlies darbību");
+                Console.WriteLine("a - aprēķināt riņķa laukumu");
+                Console.WriteLine("b - saskaitīt divus skaitļus");
+                Console.WriteLine("c - vai skaitlis dalās");
+                Console.WriteLine("x - iziet");
+                usersInput = Console.ReadLine();
+                if (usersInput == "a")// if - else if - else - programma izpildīs tikai vienu bloku; else if var būt cik tik grib
+                {
+                    CalculateCircleArea();
+                }
+                else if (usersInput == "b")
+                {
+                    CountTwoNumbersTogether();
+                }
+                else if (usersInput == "c")
+                {
+                    DoesTheNumberDivide();
+                }
+                else if (usersInput == "x")
+                {
+                    break;
+                }
+                                else
+                {
+                    Console.WriteLine("Sorry, did not understand");
+                }
+            }
+            
+            Console.ReadLine();
+
 
 
         }
-        static void CalculateCircleArea()
+        static void CalculateCircleArea()//semikolu šeit neliek, jo nav darbība
+                                         //Aiz apaļajām iekavām ir vai nu semikols, vai figūriekavas
         {
             //izveidojam mainīgo, kur glabāt rādiusu
             double radius;
@@ -29,7 +61,7 @@ namespace Calculator
             Console.WriteLine("Rezultāts: " + result);
             Console.ReadLine();
         }
-        static void CountTwoNumbersTogether()
+        static void CountTwoNumbersTogether()//Funkcijas nosaukums, norāda arī ko atgriezīs. Void - vienkārši izpildās.
         {
             double firstNumber;//izveidojam mainīgo pirmajam skaitlim
             firstNumber = GetNumberFromUser("Lūdzu ievadiet pirmo skaitli");//izsaucam funkciju skaitļa iegūšanai
@@ -60,9 +92,24 @@ namespace Calculator
             {
                 Console.WriteLine("Brīnišķīgi ievadīts skaitlis");
             }
-            return parsedNumber;//return beigās, jo tālāk neies, ja tas būs sākumā
+            return parsedNumber;//return beigās, jo tālāk neies, ja tas būs sākumā.
+            //Return vajadzīgs, lai funkcija atgrieztu vērtību
         }
-       
+        static void DoesTheNumberDivide()
+        {
+            double dalāmais = GetNumberFromUser("Lūdzu ievadiet dalāmo");
+            double dalītājs = GetNumberFromUser("Lūdzu ievadiet dalītāju");
+            double modulis = dalāmais % dalītājs;// dala tuvāko veselo skaitli un modulī parādās atlikums
+            if (modulis == 0)// ja skaitļi dalās - modulis ir 0
+            {
+                Console.WriteLine("Skaitļi dalās");
+            }
+            else
+            {
+                Console.WriteLine("Skaitļi nedalās");
+            }
+        }
+
 
 
     }
