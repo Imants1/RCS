@@ -88,10 +88,7 @@ namespace Calculator
                 Console.WriteLine("Ievadi skaitli vēlreiz");
                 parsedNumber = GetNumberFromUser(msg);// funkcija var izsaukt pati sevi
             }
-            else
-            {
-                Console.WriteLine("Brīnišķīgi ievadīts skaitlis");
-            }
+           
             return parsedNumber;//return beigās, jo tālāk neies, ja tas būs sākumā.
             //Return vajadzīgs, lai funkcija atgrieztu vērtību
         }
