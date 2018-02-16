@@ -4,27 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NumbersGuesingGame
+namespace NumbersGuesingGameTurns
 {
     class Program
     {
         static void Main(string[] args)
         {
-
             Console.WriteLine("Lūdzu ievadi maksimālo skaitli: ");
             int maxNumber = int.Parse(Console.ReadLine());
 
             Random randomNumberMaker = new Random();// ierakstam mainīgajā jaunizveidotu ģeneratoru
             int guesableNumber = randomNumberMaker.Next(1, maxNumber + 1);//Next - atgriež gadījuma skaitli noteiktajās robežās
-            
-            while (true)
+
+            bool hasUserWon = false;
+            for (int tryCount = 1; tryCount <= 5 && !hasUserWon; tryCount = tryCount + 1)
             {
-                Console.WriteLine("Ievadiet minējumu:");
+                                
+                Console.WriteLine("Lūdzu ievadi minējumu:");
                 int minējums = int.Parse(Console.ReadLine());
-                if (minējums == guesableNumber || minējums==12345)// || - nosaka alternatīvu, kad cikls beidzas
+                if (minējums == guesableNumber || minējums == 12345)// || - nosaka alternatīvu, kad cikls beidzas
                 {
                     Console.WriteLine("Pareizi");
-                    break;
+                    hasUserWon = true;
                 }
                 else if (minējums > maxNumber)
                 {
@@ -41,16 +42,11 @@ namespace NumbersGuesingGame
 
 
             }
-
+            if (hasUserWon == false)
+            {
+                Console.WriteLine("Sorry! Pareizā atbilde " + guesableNumber);
+            }
             Console.ReadLine();
-
         }
     }
-}//paprasīt lietotājam, cik lielu skaitli viņš grib minēt
- //uzģenerēt gadījuma skaitli līdz šai robežai
- //cikls: kamēr lietotājs neuzmin:
- //paprasīt lietotājam lai viņš min kāds skaitlis ir izveidots (iegūt ievadi)
- //salīdzināt, vai lietotājs ir uzminējis
- //ja ir, tad izbeigt spēli
- //ja nav uzminējis, tad pateikt lietotājam
- //vai viņa minējums ir lielāks vai mazāks par minamo skaitli
+}
