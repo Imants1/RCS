@@ -42,7 +42,7 @@ namespace NumbersGuesingGameTurns
 
 
             }
-            if (hasUserWon == false)
+            if (hasUserWon == false)// var rakstīt arī !hasUserwon
             {
                 Console.WriteLine("Sorry! Pareizā atbilde " + guesableNumber);
             }

@@ -18,7 +18,7 @@ namespace BuzzFizz
             {
                 ulong modulis1 = skaitlis % 3;
                 ulong modulis2 = skaitlis % 5;
-                if (modulis1 == 0 && modulis2 == 0)// ja skaitļi dalās - modulis ir 0
+                if (modulis1 == 0 && modulis2 == 0)
                 {
                     Console.WriteLine("FizzBuzz");
                 }
