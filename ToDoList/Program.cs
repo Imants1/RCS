@@ -19,12 +19,14 @@ namespace ToDoList
                 Console.WriteLine("a-pievienot");
                 Console.WriteLine("b-parādīt");
                 Console.WriteLine("c-dzēst");
+                Console.WriteLine("z-saglabāt");
                 Console.WriteLine("d-dzēst visu");
                 Console.WriteLine("s-saglabāt");
                 string usersInput = Console.ReadLine();
                 switch (usersInput)
-                {
-                    case "a": //pievienot jaunu darāmo lietu
+                {// var salikt divus case kopā, piemēram case "a" un case "add" - abos gadījumos izpilda šo zaru
+                    case "a":
+                    case "pievienot"://pievienot jaunu darāmo lietu
                         Console.WriteLine("Lūdzu ievadiet darāmo lietu:");
                         string toDoTask = Console.ReadLine();
                         list.AddNewToDo(toDoTask);
@@ -37,12 +39,18 @@ namespace ToDoList
                         Console.ReadLine();
                         break;
                     case "c":
-
                         Console.WriteLine("Izvēlies, ko dzēst");
-                            list.ShowAllToDos();
+                        list.ShowAllToDos();
                         int index = int.Parse(Console.ReadLine());
                         list.DeleteToDo(index - 1);
                         Console.WriteLine("Ieraksts dzēsts!");
+                        Console.ReadLine();
+                        break;
+                    case "z":
+                        Console.WriteLine("Lūdzu ievadi paveiktā uzdevuma numuru:");
+                        list.ShowAllToDos();
+                        int done = int.Parse(Console.ReadLine());
+                        list.MarkToDoDone(done - 1);
                         Console.ReadLine();
                         break;
                     case "d":
@@ -54,9 +62,11 @@ namespace ToDoList
                         //saglabājam saturu failā
                         list.SaveToFile();
                         break;
-                                    }
-
-
+                    default:
+                        Console.WriteLine("Neatpazīta komanda");
+                        Console.ReadLine();                
+                        break;
+                }
 
             }
         }
