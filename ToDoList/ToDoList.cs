@@ -58,6 +58,7 @@ namespace ToDoList
                 File.AppendAllText(@"C:\Users\Ilzīte\Documents\ToDoApplication\todos.txt", toDoEntries[i] + "\r\n");
                 //@ ļauj ignorēt \, kas paši ļauj ignorēt citas lietas
                 // \ var ignorēt ar otru \
+
             }
         }
 

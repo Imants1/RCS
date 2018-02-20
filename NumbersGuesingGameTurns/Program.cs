@@ -16,20 +16,22 @@ namespace NumbersGuesingGameTurns
             Random randomNumberMaker = new Random();// ierakstam mainīgajā jaunizveidotu ģeneratoru
             int guesableNumber = randomNumberMaker.Next(1, maxNumber + 1);//Next - atgriež gadījuma skaitli noteiktajās robežās
 
+            Console.WriteLine("Tev ir pieci minējumi.");
+
             bool hasUserWon = false;
             for (int tryCount = 1; tryCount <= 5 && !hasUserWon; tryCount = tryCount + 1)
             {
                                 
-                Console.WriteLine("Lūdzu ievadi minējumu:");
+                Console.WriteLine("Lūdzu ievadi minējumu #" + tryCount);
                 int minējums = int.Parse(Console.ReadLine());
                 if (minējums == guesableNumber || minējums == 12345)// || - nosaka alternatīvu, kad cikls beidzas
                 {
                     Console.WriteLine("Pareizi");
                     hasUserWon = true;
                 }
-                else if (minējums > maxNumber)
+                else if (minējums > maxNumber|| minējums < 1)
                 {
-                    Console.WriteLine("Minējums pārsniedz maksimāli noteikto");
+                    Console.WriteLine("Minējums ārpus noteiktajām robežām");
                 }
                 else if (minējums > guesableNumber)
                 {

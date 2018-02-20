@@ -28,6 +28,7 @@ namespace ToDoList
                         Console.WriteLine("Lūdzu ievadiet darāmo lietu:");
                         string toDoTask = Console.ReadLine();
                         list.AddNewToDo(toDoTask);
+                        Console.ReadLine();
                         break;
                     case "b":
                         //izvadīt visas darāmās lietas uz ekrāna
