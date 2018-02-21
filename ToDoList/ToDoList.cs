@@ -34,7 +34,7 @@ namespace ToDoList
         {
             for (int i = 0; i < toDoEntries.Count; i++)// skaitītājs=skaitītājs +1 ir tas pats kas: skaitītājs +=1; vai skaitītājs ++
             {
-                Console.Write((i + 1) + "." + toDoEntries[i].Name);
+                Console.Write((i + 1) + "." + toDoEntries[i].Name);// WriteLine - uzraksta tekstu un nospiež enter, Write - tikai uzraksta
                 if (toDoEntries[i].IsCompleted)
                 {
                     Console.Write(" DONE");
@@ -100,6 +100,7 @@ namespace ToDoList
             {
                 return;
             }
+            toDoEntries.Clear();
             string[] allLinesFromFile = File.ReadAllLines(pathToToDoFile);//[]izveido masīvu - nav dinamiska garuma, nevar pievienot jaunus, dzēst, var izgūt skaitu
             //dodamies cauri sarakstam ar teksta rindām
             for (var index = 0; index < allLinesFromFile.Length; index += 2)
@@ -112,7 +113,12 @@ namespace ToDoList
 
 
             }
+
+
+
+
         }
+
     }
 }
 

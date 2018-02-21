@@ -19,9 +19,10 @@ namespace ToDoList
                 Console.WriteLine("a-pievienot");
                 Console.WriteLine("b-parādīt");
                 Console.WriteLine("c-dzēst");
-                Console.WriteLine("z-saglabāt");
+                Console.WriteLine("z-atzīmēt, kā izdarītu");
                 Console.WriteLine("d-dzēst visu");
                 Console.WriteLine("s-saglabāt");
+                Console.WriteLine("l-ielādēt sarakstu");
                 string usersInput = Console.ReadLine();
                 switch (usersInput)
                 {// var salikt divus case kopā, piemēram case "a" un case "add" - abos gadījumos izpilda šo zaru
@@ -61,6 +62,11 @@ namespace ToDoList
                     case "s":
                         //saglabājam saturu failā
                         list.SaveToFile();
+                        break;
+                    case "l":
+                        //izvadīt visas darāmās lietas uz ekrāna
+                        list.LoadFromFile();
+                        Console.ReadLine();
                         break;
                     default:
                         Console.WriteLine("Neatpazīta komanda");

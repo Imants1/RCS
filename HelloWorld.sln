@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoList", "ToDoList\ToDoLi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzz", "BuzzFizz\FizzBuzz.csproj", "{27027C70-E448-4223-8F6E-EF768C0E5824}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vardnica", "ConsoleApp1\Vardnica.csproj", "{FD0B4615-CB7A-4052-B896-6676E5F1AB6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvertsWebApp", "AdvertsWebApp\AdvertsWebApp.csproj", "{6E165247-9990-44A6-B700-1AD9D88A2CFE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{27027C70-E448-4223-8F6E-EF768C0E5824}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27027C70-E448-4223-8F6E-EF768C0E5824}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27027C70-E448-4223-8F6E-EF768C0E5824}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD0B4615-CB7A-4052-B896-6676E5F1AB6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD0B4615-CB7A-4052-B896-6676E5F1AB6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD0B4615-CB7A-4052-B896-6676E5F1AB6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD0B4615-CB7A-4052-B896-6676E5F1AB6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E165247-9990-44A6-B700-1AD9D88A2CFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E165247-9990-44A6-B700-1AD9D88A2CFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E165247-9990-44A6-B700-1AD9D88A2CFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E165247-9990-44A6-B700-1AD9D88A2CFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
