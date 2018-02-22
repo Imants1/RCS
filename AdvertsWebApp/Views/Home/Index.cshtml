@@ -1,3 +1,11 @@
-﻿
-<h2>Imants Index</h2>
+﻿<!-- šajā vietā norādam-->
+@model List<AdvertsWebApp.Models.Advert>
+
+@foreach (var ad in Model)
+{
+    <p>@ad.Name (@ad.Price  eur)</p> <a href="/Home/Advert?advertId=@ad.AdvertId">atvērt sludinājumu</a>
+    // ? adreses ceļā nozīmē, kādi parametri tiek ievadīti, lai atrastu vajadzīgo (kā argumenti funkcijā)
+}
+
+
 
