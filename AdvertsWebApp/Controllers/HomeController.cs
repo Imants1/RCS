@@ -12,35 +12,19 @@ namespace AdvertsWebApp.Controllers
      // GET: Home
         public HomeController()
         {
-            adverts = new List<Advert>();
-
-            Advert ad = new Advert();
-            ad.AdvertId = 1;
-            ad.Name = "BMW";
-            ad.Text = "labs auto";
-            ad.Price = 1234.56;
-            ad.CreationTime = DateTime.Now;
-
-            Advert homeAd = new Advert();
-            homeAd.AdvertId = 2;
-            homeAd.Name = "māja";
-            homeAd.Text = "liela māja";
-            homeAd.Price = 123456.78;
-            homeAd.CreationTime = new DateTime(1999, 12, 31);
-
-            adverts.Add(ad);
-            adverts.Add(homeAd);
+            advertDb = new AdvertDb();    //izsauc konstruktoru, kas uztaisa datubāzi      
         }
 
         private List<Advert> adverts;
+        private AdvertDb advertDb;
         public ActionResult Index() // ja izsauc lapu bez īpašiem parametriem - izsauc Index lapu
         {
-            return View(adverts);//view - nodefinē, kā lapai jāizskatās
+            return View(advertDb.Adverts.ToList());//view - nodefinē, kā lapai jāizskatās
         }
 
         public ActionResult Advert(int advertId)
         {
-            foreach (var ad in adverts)
+            foreach (var ad in advertDb.Adverts)
             {
                 if (ad.AdvertId == advertId)
                 {
@@ -49,6 +33,21 @@ namespace AdvertsWebApp.Controllers
             }
             return View();
 
+        }
+
+        public ActionResult CreateAdvert()
+        {
+            return View();
+        }
+        // GET metode - iegūst datus no servera
+        // POST metode - nosūta datus serverim. tā datus no formas var nosūtīt serverim
+        [HttpPost] // automātiski uzskata GET, ja grib POST - jānorāda
+        public ActionResult CreateAdvert(Advert advert)
+        {
+            advert.CreationTime = DateTime.Now;
+            advertDb.Adverts.Add(advert);
+            advertDb.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

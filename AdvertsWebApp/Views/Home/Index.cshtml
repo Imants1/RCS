@@ -1,11 +1,15 @@
-﻿<!-- šajā vietā norādam-->
+﻿<!-- šajā vietā norādam, kāds modelis tiek izmantots-->
+   <!-- ļauj html rakstīt ar C#-->
 @model List<AdvertsWebApp.Models.Advert>
+<h1>Visi sludinājumi</h1>
 
 @foreach (var ad in Model)
 {
-    <p>@ad.Name (@ad.Price  eur)</p> <a href="/Home/Advert?advertId=@ad.AdvertId">atvērt sludinājumu</a>
+    <p>
+        <a href="/Home/Advert?advertId=@ad.AdvertId">@ad.Name (@ad.Price  eur)</a>
+    </p> 
     // ? adreses ceļā nozīmē, kādi parametri tiek ievadīti, lai atrastu vajadzīgo (kā argumenti funkcijā)
 }
 
-
+@Html.ActionLink("pievienot jaunu sludinājumu", "CreateAdvert")
 
